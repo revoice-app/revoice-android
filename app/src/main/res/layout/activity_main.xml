@@ -68,26 +68,23 @@
         ></TextView>
 
 
-
     <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/logi_button"
-        android:id="@+id/button"
-        android:layout_marginBottom="100dp"
         android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:text="   Sign with Google"
-        android:textSize="15dp"
-        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/logi_button"
         android:stateListAnimator="@null"
+        android:text="   Sign with Google"
 
 
         android:textColor="#464646"
 
-        >
-    </Button>
+        android:textSize="15dp"></Button>
 
     <ImageView
         android:layout_width="65dp"

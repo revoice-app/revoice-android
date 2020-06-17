@@ -2,19 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sar.user.smart_city">
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="Any character"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        tools:replace="android:appComponentFactory"
-        android:appComponentFactory="Any character"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainScreen"></activity>
-        <activity android:name="RecordAudio"></activity>
+        android:theme="@style/AppTheme"
+        tools:replace="android:appComponentFactory">
+        <activity android:name=".ram"></activity>
+        <activity android:name=".MainScreen" />
+        <activity android:name=".RecordAudio" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,8 @@
             </intent-filter>
         </activity>
     </application>
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
 </manifest>

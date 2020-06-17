@@ -1,20 +1,15 @@
 package com.sar.user.smart_city;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.media.MediaRecorder;
-import android.os.Environment;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.io.IOException;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class MainScreen extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -29,7 +24,7 @@ public class MainScreen extends AppCompatActivity {
         recordButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), RecordAudio.class);
+                Intent i = new Intent(MainScreen.this, ram.class);
                 startActivity(i);
             }
         });
