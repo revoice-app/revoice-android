@@ -2,7 +2,9 @@ package com.sar.user.smart_city;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,7 @@ public class AudioListAdapter extends RecyclerView.Adapter<AudioListAdapter.Audi
     private TimeAgo timeAgo;
 
     private onItemListClick onItemListClick;
+    private  int lastSelect=-1;
 
     public AudioListAdapter(File[] allFiles, AudiolistFragment onItemListClick) {
         this.allFiles = allFiles;
@@ -34,6 +37,15 @@ public class AudioListAdapter extends RecyclerView.Adapter<AudioListAdapter.Audi
     public void onBindViewHolder(@NonNull AudioViewHolder holder, int position) {
         holder.list_title.setText(allFiles[position].getName());
         holder.list_date.setText(timeAgo.getTimeAgo(allFiles[position].lastModified()));
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(lastSelect!=-1)
+                {
+
+                }
+            }
+        });
     }
 
     @Override
@@ -47,6 +59,7 @@ public class AudioListAdapter extends RecyclerView.Adapter<AudioListAdapter.Audi
         private ImageView list_image;
         private TextView list_title;
         private TextView list_date;
+        private CheckBox checkBox;
 
         public AudioViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -54,14 +67,21 @@ public class AudioListAdapter extends RecyclerView.Adapter<AudioListAdapter.Audi
             list_image = itemView.findViewById(R.id.list_image_view);
             list_title = itemView.findViewById(R.id.list_title);
             list_date = itemView.findViewById(R.id.list_date);
-
+            checkBox=itemView.findViewById(R.id.checkbox);
             itemView.setOnClickListener(this);
+
 
         }
         @Override
         public void onClick(View v) {
-            onItemListClick.onClickListener(allFiles[getAdapterPosition()], getAdapterPosition());
+            list_image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onItemListClick.onClickListener(allFiles[getAdapterPosition()], getAdapterPosition());
+                }
+            });
         }
+
 
     }
     public interface onItemListClick {

@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ram"></activity>
+        <activity android:name=".Splash"></activity>
+        <activity android:name=".AudioToText" />
+        <activity android:name=".ram" />
         <activity android:name=".MainScreen" />
+        <activity android:name=".TextReview" />
         <activity android:name=".RecordAudio" />
         <activity android:name=".MainActivity">
             <intent-filter>

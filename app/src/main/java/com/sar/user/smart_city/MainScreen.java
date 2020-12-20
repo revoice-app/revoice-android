@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -16,17 +17,33 @@ public class MainScreen extends AppCompatActivity {
     private Button  recordButton;
     private MediaRecorder myAudioRecorder;
     private String outputFile;
+    private RelativeLayout audioRL;
+    private RelativeLayout textRL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-        recordButton=findViewById(R.id.recordButton);
-        recordButton.setOnClickListener(new View.OnClickListener(){
+        audioRL=findViewById(R.id.audioRL);
+        textRL=findViewById(R.id.textRL);
+        audioRL.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainScreen.this, ram.class);
-                startActivity(i);
+            public void onClick(View v) {
+                startActivity(new Intent(MainScreen.this,AudioToText.class));
             }
         });
+        textRL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainScreen.this,TextReview.class));
+            }
+        });
+        //recordButton=findViewById(R.id.recordButton);
+//        recordButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(MainScreen.this, ram.class);
+//                startActivity(i);
+//            }
+//        });
     }
 }

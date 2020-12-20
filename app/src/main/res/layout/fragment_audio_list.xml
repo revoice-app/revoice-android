@@ -3,14 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AudiolistFragment"
-    android:background="@android:color/white"
-    >
+    android:background="@android:color/white">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewToolbar"
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#ff0000"
+        android:orientation="horizontal"
+        app:backgroundTint="#554545"
+        app:cardElevation="5dp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/toolbarTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="start"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="Audio"
+            android:textAlignment="center"
+            android:textColor="#142222"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_gravity="end"
+            android:id="@+id/submit"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"/>
+    </com.google.android.material.card.MaterialCardView>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/audio_list_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        />
 
     <include layout="@layout/player_sheet" />
 
