@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name='Smart_city'
+include ':lib_task_api'
+include ':lib_interpreter'
