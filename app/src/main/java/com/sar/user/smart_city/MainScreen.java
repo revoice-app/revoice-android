@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainScreen extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener authStateListener;
     private Button  recordButton;
+    private Button  textButton;
     private MediaRecorder myAudioRecorder;
     private String outputFile;
     @Override
@@ -21,10 +22,20 @@ public class MainScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         recordButton=findViewById(R.id.recordButton);
+        textButton=findViewById(R.id.textButton);
+
         recordButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainScreen.this, ram.class);
+                startActivity(i);
+            }
+        });
+
+        textButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainScreen.this, TextReview.class);
                 startActivity(i);
             }
         });

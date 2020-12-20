@@ -5,6 +5,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -115,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             // Google Sign In failed, update UI appropriately
             //Log.e(TAG, "Login Unsuccessful. "+result);
             Toast.makeText(this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+            Log.e("tag1234566",result.toString());
+
         }
     }
     private void firebaseAuthWithGoogle(AuthCredential credential){

@@ -13,7 +13,7 @@ public class TimeAgo {
         long hours = TimeUnit.MILLISECONDS.toHours(now.getTime() - duration);
         long days = TimeUnit.MILLISECONDS.toDays(now.getTime() - duration);
 
-        if(seconds < 60){
+        if (seconds < 60) {
             return "just now";
         } else if (minutes == 1) {
             return "a minute ago";
