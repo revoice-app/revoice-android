@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         if(firebaseAuth.getCurrentUser()!=null)
         {
             finish();
-            startActivity(new Intent(MainActivity.this,MainScreen.class));
+            startActivity(new Intent(MainActivity.this,Splash.class));
         }
     }
 

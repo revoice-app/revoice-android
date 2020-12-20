@@ -1,5 +1,6 @@
 package com.sar.user.smart_city;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -19,6 +20,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.button.MaterialButton;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,6 +43,7 @@ public  class AudiolistFragment extends Fragment implements AudioListAdapter.onI
     private boolean isPlaying = false;
 
     private File fileToPlay = null;
+    private int songSelect=-1;
 
     //UI Elements
     private ImageButton playBtn;
@@ -50,6 +53,7 @@ public  class AudiolistFragment extends Fragment implements AudioListAdapter.onI
     private SeekBar playerSeekbar;
     private Handler seekbarHandler;
     private Runnable updateSeekbar;
+    private MaterialButton materialButton;
 
     public AudiolistFragment() {
         // Required empty public constructor
@@ -73,7 +77,7 @@ public  class AudiolistFragment extends Fragment implements AudioListAdapter.onI
         playBtn = view.findViewById(R.id.player_play_btn);
         playerHeader = view.findViewById(R.id.player_header_title);
         playerFilename = view.findViewById(R.id.player_filename);
-
+        materialButton=view.findViewById(R.id.submit);
         playerSeekbar = view.findViewById(R.id.player_seekbar);
 
         String path = getActivity().getExternalFilesDir("/").getAbsolutePath();
@@ -85,6 +89,13 @@ public  class AudiolistFragment extends Fragment implements AudioListAdapter.onI
         audioList.setHasFixedSize(true);
         audioList.setLayoutManager(new LinearLayoutManager(getContext()));
         audioList.setAdapter(audioListAdapter);
+        materialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getContext(),AudioToText.class);
+                startActivity(intent);
+            }
+        });
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View view, int i) {
