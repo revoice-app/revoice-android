@@ -72,7 +72,7 @@
                         android:padding="10dp" />
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/nextBtn"
+                        android:id="@+id/button"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/answerET"

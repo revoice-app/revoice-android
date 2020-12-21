@@ -36,15 +36,9 @@ import java.io.InputStream;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 import com.google.android.material.button.MaterialButton;
 
@@ -52,24 +46,28 @@ public class TextReview extends AppCompatActivity {
     private static final String TAG = "TextClassificationDemo";
 
     private TextClassificationClient client;
-
-    private AppCompatTextView resultTextView;
     private EditText inputEditText;
     private Handler handler;
     private ScrollView scrollView;
     private String text="";
-    private MaterialButton nextBtn;
+    private MaterialButton classifyButton;
     private AppCompatImageView backIV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tfe_tc_activity_main);
+        setContentView(R.layout.text_review);
         Log.v(TAG, "onCreate");
+        inputEditText = findViewById(R.id.answerET);
+        backIV=findViewById(R.id.backIV);
+
+        backIV.setOnClickListener(view -> {
+            finish();
+        });
 
         client = new TextClassificationClient(getApplicationContext());
         handler = new Handler();
-        Button classifyButton = findViewById(R.id.button);
+        classifyButton = findViewById(R.id.button);
         classifyButton.setOnClickListener(
                 (View v) -> {
                     if(inputEditText.getText().length()>0){
@@ -83,8 +81,7 @@ public class TextReview extends AppCompatActivity {
 
                 });
 
-        inputEditText = findViewById(R.id.input_text);
-        resultTextView=findViewById(R.id.subjectTV);
+
 
     }
 
@@ -137,9 +134,9 @@ public class TextReview extends AppCompatActivity {
                         intent.putExtra("text", text);
                         startActivity(intent);
                     }
-        backIV.setOnClickListener(view -> {
-            finish();
-        });
+//        backIV.setOnClickListener(view -> {
+//            finish();
+//        });
 
                     // Append the result to the UI.
                     //resultTextView.setText(textToShow);
@@ -153,4 +150,3 @@ public class TextReview extends AppCompatActivity {
     }
 
     }
-}

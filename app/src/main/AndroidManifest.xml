@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".AudioToText" />
         <activity android:name=".ram" />
         <activity android:name=".MainScreen" />
@@ -23,10 +23,9 @@
         <activity android:name=".TextReview" />
         <activity android:name=".RecordAudio" />
         <activity android:name=".AboutUs" />
-        <activity android:name=".ImageSelect" />
         <activity android:name=".Profile" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

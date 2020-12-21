@@ -38,13 +38,7 @@ public class MainScreen extends AppCompatActivity {
 
         audioRL=findViewById(R.id.audioRL);
         textRL=findViewById(R.id.textRL);
-        logout=findViewById(R.id.logout);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-            }
-        });
+
         audioRL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
