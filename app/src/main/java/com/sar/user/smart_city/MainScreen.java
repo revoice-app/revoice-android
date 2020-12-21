@@ -5,6 +5,8 @@ import android.media.MediaRecorder;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +20,7 @@ public class MainScreen extends AppCompatActivity {
     private MediaRecorder myAudioRecorder;
     private String outputFile;
     private RelativeLayout audioRL;
+    private AppCompatImageView logout;
     private RelativeLayout textRL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,13 @@ public class MainScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
         audioRL=findViewById(R.id.audioRL);
         textRL=findViewById(R.id.textRL);
+        logout=findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+            }
+        });
         audioRL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
