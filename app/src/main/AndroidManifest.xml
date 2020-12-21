@@ -16,6 +16,10 @@
         <activity android:name=".AudioToText" />
         <activity android:name=".ram" />
         <activity android:name=".MainScreen" />
+        <activity android:name=".FinalAct" />
+        <activity android:name=".ImageSelect" />
+
+
         <activity android:name=".TextReview" />
         <activity android:name=".RecordAudio" />
         <activity android:name=".AboutUs" />

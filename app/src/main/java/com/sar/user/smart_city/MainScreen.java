@@ -2,6 +2,11 @@ package com.sar.user.smart_city;
 
 import android.content.Intent;
 import android.media.MediaRecorder;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +22,7 @@ public class MainScreen extends AppCompatActivity {
     private MediaRecorder myAudioRecorder;
     private String outputFile;
     private RelativeLayout audioRL;
+    private AppCompatImageView logout;
     private RelativeLayout textRL;
     private RelativeLayout aboutUs;
     private RelativeLayout profile;
@@ -30,6 +36,15 @@ public class MainScreen extends AppCompatActivity {
         aboutUs = findViewById(R.id.aboutUs);
         profile = findViewById(R.id.profile);
 
+        audioRL=findViewById(R.id.audioRL);
+        textRL=findViewById(R.id.textRL);
+        logout=findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+            }
+        });
         audioRL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

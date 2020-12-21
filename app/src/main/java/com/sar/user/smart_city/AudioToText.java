@@ -88,9 +88,10 @@ public class AudioToText extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.d("popo","pp  - "+classify(txvResult.getText().toString()));
-                builder1.setMessage(kaka);
-                AlertDialog alert11 = builder1.create();
-                alert11.show();
+               // builder1.setMessage(kaka);
+               // AlertDialog alert11 = builder1.create();
+               // alert11.show();
+                classify(txvResult.getText().toString());
 
             }
         });
@@ -174,6 +175,12 @@ public class AudioToText extends AppCompatActivity {
                         textToShow[0] += String.format("    %s: %s\n", result.getTitle(), result.getConfidence());
                     }
                     textToShow[0] += "---------\n";
+                    String text=textToShow[0];
+                    if(text.length()>0) {
+                        Intent intent = new Intent(this, ImageSelect.class);
+                        intent.putExtra("text", text);
+                        startActivity(intent);
+                    }
 
 
                     // Append the result to the UI.
