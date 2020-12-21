@@ -45,6 +45,7 @@ android {
 dependencies {
 
     implementation 'com.google.firebase:firebase-database:16.0.4'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
     interpreterImplementation project(":lib_interpreter")
     taskApiImplementation project(":lib_task_api")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -66,6 +67,11 @@ dependencies {
     implementation 'com.github.jaiselrahman:FilePicker:feature~api29_support-SNAPSHOT'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    /*Lottie Animation*/
+    def lottieVersion = "3.4.4"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
 
 
     //noinspection GradleCompatible

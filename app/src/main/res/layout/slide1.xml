@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#939599">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:id="@id/image"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/smartcity" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Who we are?"
+            android:textColor="@color/colorDarkBlue"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_below="@id/image"
+            android:textAlignment="center"
+            android:id="@+id/title"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingEnd="30dp"
+            android:paddingStart="30dp"
+            android:text="This is a smart review app which will help the people to lodge complaints, provide live
+feedback on any ongoings around the city.The major role of our app is the extraction and estimation of the sentiment from the
+feedback which is provided in the form of speech and generate a score/confidence which is
+sent alongside the regular feedback, so the authority can directly infer from the feedback."
+            android:textAlignment="center"
+            android:textColor="#393333"
+            android:textSize="15sp"
+            android:layout_below="@id/title"/>
+
+    </RelativeLayout>

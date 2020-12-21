@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Team"
+        android:textSize="28sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="50dp"
+        android:id="@+id/team"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/team"
+        android:text="4 Members"
+        android:layout_marginStart="50dp"
+        android:id="@+id/members"
+        android:layout_marginBottom="40dp"
+        android:textColor="#231A1A"
+        android:textSize="15sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/members"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/taru">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/my_image"
+            android:scaleType="fitCenter"
+            android:background="@color/white"
+            android:id="@+id/img"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img"
+            android:text="Taru Ghiya"
+            android:layout_marginStart="20dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/name"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img"
+            android:text="Android Developer"
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/name"
+            android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/taru"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/abhinav">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/abhinav"
+            android:scaleType="fitXY"
+            android:background="@color/white"
+            android:id="@+id/img1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img1"
+            android:text="Abhinav Gupta"
+            android:layout_marginStart="20dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/name1"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img1"
+            android:text="Android developer, Backend developer"
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/name1"
+            android:layout_marginTop="5dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/abhinav"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/tarun">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/tarun"
+            android:scaleType="fitXY"
+            android:background="@color/white"
+            android:id="@+id/img2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img2"
+            android:text="Tarun Singh"
+            android:layout_marginStart="20dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/name2"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img2"
+            android:text="Machine Learning Developer."
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/name2"
+            android:layout_marginTop="5dp"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tarun"
+        android:layout_marginBottom="20dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/devesh"
+            android:scaleType="fitCenter"
+            android:background="@color/white"
+            android:id="@+id/img3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img3"
+            android:text="Devesh Mishra"
+            android:layout_marginStart="20dp"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:id="@+id/name3"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img3"
+            android:text="Machine Learning Developer."
+            android:layout_marginStart="20dp"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/name3"
+            android:layout_marginTop="5dp"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <!--    <ImageView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/slide3"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_margin="50dp"-->
+<!--        android:id="@+id/image"/>-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Smart city"-->
+<!--        android:textColor="@android:color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_below="@id/image"-->
+<!--        android:textAlignment="center"-->
+<!--        android:id="@+id/title"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:text="slide_1_desc"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@android:color/darker_gray"-->
+<!--        android:textSize="17sp"-->
+<!--        android:layout_below="@id/title"/>-->
+
+</RelativeLayout>

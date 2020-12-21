@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#939599">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:id="@id/image"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/work" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WHAT WE DO?"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_below="@id/image"
+        android:textAlignment="center"
+        android:id="@+id/title"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="We help people provide feedback on bad
+quality of road, complain about mismanagement of staff in public transport etc. These
+feedbacks would directly be sent to respective government authority or any higher authority which is
+responsible for the discrepancy of their services."
+        android:textAlignment="center"
+        android:textColor="#393333"
+        android:textSize="15sp"
+        android:layout_below="@id/title"/>
+
+</RelativeLayout>

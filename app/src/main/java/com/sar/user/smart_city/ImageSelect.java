@@ -82,7 +82,6 @@ public class ImageSelect extends AppCompatActivity implements DeletePostImageLis
     private void initViews() {
 
         ivBack = findViewById(R.id.iv_back);
-        tvPost = findViewById(R.id.tv_post);
         uploadImage = findViewById(R.id.uploadImage);
         imageRV = findViewById(R.id.imageRV);
         saveBtn = findViewById(R.id.saveBtn);

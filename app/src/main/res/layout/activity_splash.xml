@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:backgroundTint="#000000"
-    android:backgroundTintMode="add"
-    tools:context=".Splash">
+    android:background="@color/white">
 
-    <ImageView
-        android:layout_width="244dp"
-        android:layout_height="384dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginRight="18dp"
-        android:src="@drawable/newlogo_new"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/city3"
+        android:layout_centerInParent="true"
+        app:lottie_speed="1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

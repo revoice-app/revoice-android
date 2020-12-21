@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Audio Recorder</string>
+    <string name="app_name">Smart City</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="tfe_tc_edit_text_hint" translatable="false">Please enter your review.</string>

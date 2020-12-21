@@ -13,7 +13,7 @@
         android:layout_marginStart="10dp"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal_background" />
+        app:srcCompat="@drawable/ic_arrow_back" />
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -23,7 +23,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
         android:background="@color/white"
-        android:backgroundTint="@color/quiz_bg"
+        android:backgroundTint="#939599"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp">
 
@@ -39,7 +39,7 @@
                 android:layout_marginBottom="50dp"
                 android:text="Provide your Review"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/colorDarkBlue"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -71,16 +71,20 @@
                         android:minHeight="400dp"
                         android:padding="10dp" />
 
-
                     <com.google.android.material.button.MaterialButton
-                        android:layout_width="wrap_content"
+                        android:id="@+id/nextBtn"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/answerET"
+                        android:layout_below="@+id/answerET"
                         android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
                         android:layout_marginEnd="20dp"
-                        android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginBottom="20dp"
+                        android:backgroundTint="#939599"
+                        android:enabled="true"
                         android:text="Next"
-                        android:id="@+id/nextBtn"/>
+                        app:cornerRadius="20dp" />
 
                 </RelativeLayout>
 

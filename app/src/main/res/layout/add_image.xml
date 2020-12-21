@@ -32,7 +32,7 @@
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:tint="@color/black"
-                app:srcCompat="@drawable/player_back_btn" />
+                app:srcCompat="@drawable/ic_arrow_back" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -43,24 +43,12 @@
                 android:gravity="start"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:text="select_images"
+                android:text="Select Images"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_post"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:paddingStart="10dp"
-                android:paddingTop="20dp"
-                android:paddingEnd="15dp"
-                android:paddingBottom="20dp"
-                android:text="preview"
-                android:textColor="@color/black"
-                android:textSize="17sp" />
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.core.widget.NestedScrollView
@@ -101,14 +89,15 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveBtn"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
         android:enabled="true"
-        android:text="save_paper"
-        app:cornerRadius="20dp" />
+        android:text="Skip"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#939599"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
