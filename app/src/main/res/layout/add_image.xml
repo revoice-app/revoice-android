@@ -49,6 +49,18 @@
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingStart="10dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="20dp"
+                android:text="preview"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
         </com.google.android.material.card.MaterialCardView>
 
         <androidx.core.widget.NestedScrollView
