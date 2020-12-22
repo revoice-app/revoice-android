@@ -2,17 +2,13 @@ package com.sar.user.smart_city;
 
 import android.content.Intent;
 import android.media.MediaRecorder;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -30,14 +26,14 @@ public class MainScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_screen);
+        setContentView(R.layout.main_screen);
         audioRL = findViewById(R.id.audioRL);
         textRL = findViewById(R.id.textRL);
         aboutUs = findViewById(R.id.aboutUs);
         profile = findViewById(R.id.profile);
 
-        audioRL=findViewById(R.id.audioRL);
-        textRL=findViewById(R.id.textRL);
+        audioRL = findViewById(R.id.audioRL);
+        textRL = findViewById(R.id.textRL);
 
         audioRL.setOnClickListener(new View.OnClickListener() {
             @Override

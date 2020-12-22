@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#000000"
+    android:backgroundTintMode="add"
+    android:orientation="vertical"
+    android:background="@drawable/city">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/homelogo" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomLl"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/aboutTop"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="70dp"
+            android:background="#ffffff"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:id="@+id/textRL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f1e9e5">
+
+                <ImageView
+                    android:id="@+id/image1"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/xxxhdpi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Text Review"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="70dp"
+            android:background="#ffffff"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:id="@+id/audioRL"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f1e9e5">
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/au" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Audio Review"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottomLl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/about"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="70dp"
+            android:background="#ffffff"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:id="@+id/aboutUs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f1e9e5">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/hdpi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="About Us"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="70dp"
+            android:background="#ffffff"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f1e9e5"
+                android:id="@+id/profile">
+
+                <ImageView
+                    android:id="@+id/image4"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="#000000"
+                    android:backgroundTintMode="multiply"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/persson" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image4"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Profile"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+</RelativeLayout>
