@@ -54,34 +54,19 @@ public class LearnDragAdapter extends RecyclerView.Adapter<LearnDragAdapter.Imag
         if (position == (mFilesList.size())) {
             holder.ivImage.setImageResource(R.drawable.upload);
             holder.imgClose.setVisibility(View.INVISIBLE);
-            holder.ivImage.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    addImageListener.addImage();
-                }
-            });
+
             return;
         }
         final UploadImageData imageData = mFilesList.get(position);
         if (imageData.getMediaFile().getMediaType() == MediaFile.TYPE_VIDEO) {
             Glide.with(context).load(imageData.getMediaFile().getUri()).into(holder.ivImage);
-            holder.imgClose.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    deletePostImageListener.deleteImage(imageData.getMediaFile(), position);
-                    addImageListener.addContentView();
+            holder.imgClose.setVisibility(View.INVISIBLE);
 
-                }
-            });
 
         } else {
             Glide.with(context).load(imageData.getMediaFile().getUri()).into(holder.ivImage);
-            holder.imgClose.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    deletePostImageListener.deleteImage(imageData.getMediaFile(), position);
-                }
-            });
+            holder.imgClose.setVisibility(View.INVISIBLE);
+
         }
     }
 

@@ -12,14 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".Profile"></activity>
+        <activity android:name=".Splash" />
         <activity android:name=".AudioToText" />
         <activity android:name=".ram" />
         <activity android:name=".MainScreen" />
         <activity android:name=".FinalAct" />
         <activity android:name=".ImageSelect" />
-
-
         <activity android:name=".TextReview" />
         <activity android:name=".RecordAudio" />
         <activity android:name=".MainActivity">
@@ -30,8 +29,8 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

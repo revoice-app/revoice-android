@@ -174,7 +174,7 @@ public class AudioToText extends AppCompatActivity {
                         Result result = results.get(i);
                         textToShow[0] += String.format("    %s: %s\n", result.getTitle(), result.getConfidence());
                     }
-                    textToShow[0] += "---------\n";
+                    textToShow[0] += "\n";
                     String text=textToShow[0];
                     if(text.length()>0) {
                         Intent intent = new Intent(this, ImageSelect.class);

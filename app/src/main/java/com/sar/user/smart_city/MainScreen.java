@@ -22,6 +22,7 @@ public class MainScreen extends AppCompatActivity {
     private RelativeLayout audioRL;
     private AppCompatImageView logout;
     private RelativeLayout textRL;
+    private RelativeLayout profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,8 @@ public class MainScreen extends AppCompatActivity {
         audioRL=findViewById(R.id.audioRL);
         textRL=findViewById(R.id.textRL);
         logout=findViewById(R.id.logout);
+        profile=findViewById(R.id.profile);
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +48,13 @@ public class MainScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainScreen.this,TextReview.class));
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainScreen.this,Profile.class));
+
             }
         });
         //recordButton=findViewById(R.id.recordButton);

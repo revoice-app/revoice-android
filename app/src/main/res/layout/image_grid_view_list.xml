@@ -1,0 +1,99 @@
+<!--
+  ~ /********************************************************************************
+  ~  COPYRIGHT(c) 2020 by ssplat.com Pvt. Ltd. All Rights Reserved.
+  ~  <p>
+  ~  This software is the sole property of ssplat.com and is protected by copyright
+  ~  law and international treaty provisions. Unauthorized reproduction or
+  ~  redistribution of this program, or any portion of it may result in severe
+  ~  civil and criminal penalties and will be prosecuted to the maximum extent
+  ~  possible under the law. ssplat.com reserves all rights not expressly granted.
+  ~  You may not reverse engineer, decompile, or disassemble the software, except
+  ~  and only to the extent that such activity is expressly permitted by
+  ~  applicable law notwithstanding this limitation.
+  ~  <p>
+  ~  THIS SOFTWARE IS PROVIDED TO YOU "AS IS" WITHOUT WARRANTY OF ANY KIND,
+  ~  EITHER EXPRESS OR IMPLIED,INCLUDING BUT NOT LIMITED TO THE IMPLIED
+  ~  WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+  ~  YOU ASSUME THE ENTIRE RISK AS TO THE ACCURACY AND THE USE OF THIS SOFTWARE.
+  ~  ssplat.com SHALL NOT BE LIABLE FOR ANY DAMAGES WHATSOEVER ARISING OUT OF THE
+  ~  USE OF OR INABILITY TO USE THIS SOFTWARE, EVEN IF ssplat.com HAS BEEN ADVISED
+  ~  OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  *******************************************************************************
+  ~  */
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="20dp"
+    android:clickable="true"
+    android:background="@color/black"
+    android:padding="2dp"
+    android:focusable="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:strokeColor="@color/darkblue">
+
+        <RelativeLayout
+            android:id="@+id/title_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/title_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="70dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/titleTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Nothing"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/image"
+                        android:textSize="15sp"
+                        />
+
+
+
+                </LinearLayout>
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:text="image"
+                    android:textSize="10sp"
+                    android:id="@+id/imageButton"
+                    />
+
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</RelativeLayout>

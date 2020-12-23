@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ll_image_container"
-    android:layout_width="160dp"
-    android:layout_height="200dp"
-    android:layout_marginStart="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="350dp"
+    android:layout_marginStart="45dp"
+    android:layout_marginEnd="45dp"
     android:layout_marginTop="10dp"
-    android:layout_marginEnd="5dp"
     android:layout_marginBottom="5dp">
 
     <androidx.appcompat.widget.AppCompatImageView
