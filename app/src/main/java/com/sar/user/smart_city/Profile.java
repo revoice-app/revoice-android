@@ -34,6 +34,7 @@ public class Profile extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference myRef;
     private AppCompatImageView backIV;
+    private ArrayList<Data> data;
 
 
     @Override
@@ -46,6 +47,7 @@ public class Profile extends AppCompatActivity {
         logout=findViewById(R.id.logout);
         backIV=findViewById(R.id.backIV);
 
+        data=new ArrayList<>();
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,15 +69,25 @@ public class Profile extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef= database.getReference("review");
-        Query specific_user = myRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query specific_user = myRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("time");
 
-        specific_user.addListenerForSingleValueEvent(
+        specific_user.addValueEventListener(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        //here you will get the data
-                        String firstName = (String) dataSnapshot.getValue();
-                        team.setText(firstName);
+
+
+                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                            Data user = postSnapshot.getValue(Data.class);
+                            data.add(user);
+                        }
+                        String TAG="";
+                        Log.i(TAG,"add university name = " + data.get(0).text);
+
+
+//                        //here you will get the data
+//                        String firstName = (String) dataSnapshot.getValue();
+//                        team.setText(firstName);
                     }
 
                     @Override
@@ -125,5 +137,31 @@ public class Profile extends AppCompatActivity {
         }
 
         team.setText(review.toString());
+    }
+}
+
+class Data{
+    String text;
+    String image;
+
+//    public Data(String text, String image) {
+//        this.text = text;
+//        this.image = image;
+//    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

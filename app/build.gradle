@@ -11,6 +11,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -71,6 +73,18 @@ dependencies {
     /*Lottie Animation*/
     def lottieVersion = "3.4.4"
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.9.8'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.9.8'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.android.volley:volley:1.1.1'
+
 
 
 
