@@ -6,11 +6,14 @@ import android.renderscript.ScriptGroup;
 import android.util.Log;
 import android.view.InputEvent;
 import android.view.View;
+import android.widget.HorizontalScrollView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,6 +26,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Profile extends AppCompatActivity {
@@ -34,7 +38,7 @@ public class Profile extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference myRef;
     private AppCompatImageView backIV;
-    private ArrayList<Data> data;
+    private RecyclerView recyclerView;
 
 
     @Override
@@ -46,13 +50,14 @@ public class Profile extends AppCompatActivity {
         team=findViewById(R.id.team);
         logout=findViewById(R.id.logout);
         backIV=findViewById(R.id.backIV);
+        recyclerView=findViewById(R.id.rect);
 
-        data=new ArrayList<>();
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-               startActivity(new Intent(Profile.this, MainActivity.class));
+                startActivity(new Intent(Profile.this, MainActivity.class));
             }
         });
 
@@ -68,26 +73,22 @@ public class Profile extends AppCompatActivity {
         }
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef= database.getReference("review");
-        Query specific_user = myRef.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("time");
+        myRef= database.getReference("review/"+FirebaseAuth.getInstance().getUid().toString());
 
-        specific_user.addValueEventListener(
+        List<ModelReview> reviews=new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(
                 new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
+                        //here you will get the data
+                        for(DataSnapshot dataSnapshot2:dataSnapshot.getChildren())
+                        {
 
+                                reviews.add(new ModelReview(dataSnapshot2.child("text").getValue().toString(),dataSnapshot2.child("image").getValue().toString(),dataSnapshot2.child("textClass").getValue().toString()));
 
-                        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                            Data user = postSnapshot.getValue(Data.class);
-                            data.add(user);
                         }
-                        String TAG="";
-                        Log.i(TAG,"add university name = " + data.get(0).text);
+                        recyclerView.setAdapter(new ReviewAdap(Profile.this,reviews));
 
-
-//                        //here you will get the data
-//                        String firstName = (String) dataSnapshot.getValue();
-//                        team.setText(firstName);
                     }
 
                     @Override
@@ -95,6 +96,9 @@ public class Profile extends AppCompatActivity {
 
                     }
                 });
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
 
 //        myRef.child(FirebaseAuth.getInstance().getUid().toString()).gaddOnCompleteListener(new OnCompleteListener<Void>() {
 //            @Override
@@ -122,7 +126,7 @@ public class Profile extends AppCompatActivity {
 //
 //            }
 //        });
-}
+    }
 
     private void collectReviews(Map<String, Object> value) {
         ArrayList<Long> review = new ArrayList<>();
@@ -137,31 +141,5 @@ public class Profile extends AppCompatActivity {
         }
 
         team.setText(review.toString());
-    }
-}
-
-class Data{
-    String text;
-    String image;
-
-//    public Data(String text, String image) {
-//        this.text = text;
-//        this.image = image;
-//    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 }

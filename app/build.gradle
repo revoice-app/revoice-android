@@ -86,6 +86,17 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
 
 
+    implementation 'com.karumi:dexter:6.0.2'
+
+    implementation 'com.github.jaiselrahman:FilePicker:feature~api29_support-SNAPSHOT'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
 
 
     //noinspection GradleCompatible

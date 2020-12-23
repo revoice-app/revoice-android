@@ -127,7 +127,7 @@ public class TextReview extends AppCompatActivity {
                         Result result = results.get(i);
                         textToShow += String.format("    %s: %s\n", result.getTitle(), result.getConfidence());
                     }
-                    textToShow += "---------\n";
+                    textToShow += "\n";
                     text=textToShow;
                     if(text.length()>0) {
                         Intent intent = new Intent(this, ImageSelect.class);
