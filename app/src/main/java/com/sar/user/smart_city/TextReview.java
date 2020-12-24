@@ -17,6 +17,7 @@
 package com.sar.user.smart_city;
 
 import android.content.Intent;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -24,29 +25,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.tensorflow.lite.examples.textclassification.client.Result;
 import org.tensorflow.lite.examples.textclassification.client.TextClassificationClient;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-/** The main activity to provide interactions with users. */
 public class TextReview extends AppCompatActivity {
     private static final String TAG = "TextClassificationDemo";
 
@@ -56,7 +44,8 @@ public class TextReview extends AppCompatActivity {
     private EditText inputEditText;
     private Handler handler;
     private ScrollView scrollView;
-    private String text="";
+    private String text = "";
+    LocationManager locationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,21 +56,21 @@ public class TextReview extends AppCompatActivity {
         client = new TextClassificationClient(getApplicationContext());
         handler = new Handler();
         Button classifyButton = findViewById(R.id.button);
+
         classifyButton.setOnClickListener(
                 (View v) -> {
-                    if(inputEditText.getText().length()>0){
-                    classify(inputEditText.getText().toString());
+                    if (inputEditText.getText().length() > 0) {
+                        classify(inputEditText.getText().toString());
 
-                    }
-                    else {
-                        Toast.makeText(TextReview.this,"Please give review",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(TextReview.this, "Please give review", Toast.LENGTH_SHORT).show();
 
                     }
 
                 });
 
         inputEditText = findViewById(R.id.input_text);
-        resultTextView=findViewById(R.id.subjectTV);
+        resultTextView = findViewById(R.id.subjectTV);
 
     }
 
@@ -105,7 +94,9 @@ public class TextReview extends AppCompatActivity {
                 });
     }
 
-    /** Send input text to TextClassificationClient and get the classify messages. */
+    /**
+     * Send input text to TextClassificationClient and get the classify messages.
+     */
     private void classify(final String text) {
         handler.post(
                 () -> {
@@ -117,21 +108,36 @@ public class TextReview extends AppCompatActivity {
                 });
     }
 
-    /** Show classification result on the screen. */
+    /**
+     * Show classification result on the screen.
+     */
     private void showResult(final String inputText, final List<Result> results) {
         // Run on UI thread as we'll updating our app UI
         runOnUiThread(
                 () -> {
                     String textToShow = "Input: " + inputText + "\nOutput:\n";
+                    Float a = 0f;
+                    Float b = 0f;
                     for (int i = 0; i < results.size(); i++) {
                         Result result = results.get(i);
                         textToShow += String.format("    %s: %s\n", result.getTitle(), result.getConfidence());
+                        if (i == 0)
+                            a = result.getConfidence();
+                        else {
+                            b = result.getConfidence();
+                            ;
+                        }
                     }
                     textToShow += "\n";
-                    text=textToShow;
-                    if(text.length()>0) {
+                    text = textToShow;
+                    if (text.length() > 0) {
                         Intent intent = new Intent(this, ImageSelect.class);
-                        intent.putExtra("text", text);
+                        intent.putExtra("text", inputText);
+                        if (a > b)
+                            intent.putExtra("textSent", "Positive Review sentiment: We determined that you gave a \"Positive\" review. Thank you for your efforts.");
+                        else {
+                            intent.putExtra("textSent", "Negative Review sentiment: We determined that you gave a \"Negative\" review. We are sorry for the inconvenience.");
+                        }
                         startActivity(intent);
                     }
 
@@ -139,7 +145,7 @@ public class TextReview extends AppCompatActivity {
                     //resultTextView.setText(textToShow);
 
                     // Clear the input text.
-                   // inputEditText.getText().clear();
+                    // inputEditText.getText().clear();
 
                     // Scroll to the bottom to show latest entry's classification result.
                     //scrollView.post(() -> scrollView.fullScroll(View.FOCUS_DOWN));
