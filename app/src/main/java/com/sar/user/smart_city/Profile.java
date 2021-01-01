@@ -84,7 +84,7 @@ public class Profile extends AppCompatActivity {
                         for(DataSnapshot dataSnapshot2:dataSnapshot.getChildren())
                         {
 
-                                reviews.add(new ModelReview(dataSnapshot2.child("text").getValue().toString(),dataSnapshot2.child("image").getValue().toString(),dataSnapshot2.child("textClass").getValue().toString()));
+                                reviews.add(new ModelReview(dataSnapshot2.child("text").getValue().toString(),dataSnapshot2.child("image").getValue().toString(),dataSnapshot2.child("textClass").getValue().toString(),dataSnapshot2.child("location").getValue().toString(),dataSnapshot2.getKey(),dataSnapshot2.child("textSent").getValue().toString()));
 
                         }
                         recyclerView.setAdapter(new ReviewAdap(Profile.this,reviews));

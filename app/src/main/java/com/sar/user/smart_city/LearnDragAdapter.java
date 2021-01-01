@@ -51,23 +51,13 @@ public class LearnDragAdapter extends RecyclerView.Adapter<LearnDragAdapter.Imag
 
     @Override
     public void onBindViewHolder(@NonNull ImageHolder holder, final int position) {
-        if (position == (mFilesList.size())) {
-            holder.ivImage.setImageResource(R.drawable.upload);
-            holder.imgClose.setVisibility(View.INVISIBLE);
 
-            return;
-        }
         final UploadImageData imageData = mFilesList.get(position);
-        if (imageData.getMediaFile().getMediaType() == MediaFile.TYPE_VIDEO) {
+
             Glide.with(context).load(imageData.getMediaFile().getUri()).into(holder.ivImage);
             holder.imgClose.setVisibility(View.INVISIBLE);
 
 
-        } else {
-            Glide.with(context).load(imageData.getMediaFile().getUri()).into(holder.ivImage);
-            holder.imgClose.setVisibility(View.INVISIBLE);
-
-        }
     }
 
     @Override
@@ -83,7 +73,7 @@ public class LearnDragAdapter extends RecyclerView.Adapter<LearnDragAdapter.Imag
 
     @Override
     public int getItemCount() {
-        return mFilesList.size() + 1;
+        return mFilesList.size();
     }
 
 

@@ -82,6 +82,8 @@ public class ImageSelect extends AppCompatActivity implements DeletePostImageLis
     private static ProgressDialog progress;
     private AppCompatImageView uploadImage;
     private static String text = "";
+    private static String textSent = "";
+
 
 
     @Override
@@ -92,6 +94,7 @@ public class ImageSelect extends AppCompatActivity implements DeletePostImageLis
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(imageRV);
         text=getIntent().getStringExtra("text");
+        textSent=getIntent().getStringExtra("textSent");
 
         mContext = this;
         mLocalImageList = new ArrayList<>();
@@ -132,7 +135,8 @@ public class ImageSelect extends AppCompatActivity implements DeletePostImageLis
                     intent.putExtra("text",text);
                     byte[] b=new byte[]{};
                     intent.putExtra("image",b);
-                    intent.putExtra("class","");
+                    intent.putExtra("class","None detected: Sorry we could not detect any hampering. Kindly try with a different image.");
+                    intent.putExtra("textSent",textSent);
                     startActivity(intent);
                 }
 
@@ -347,6 +351,9 @@ public class ImageSelect extends AppCompatActivity implements DeletePostImageLis
                             hideLoader(ImageSelect.this);
                             Intent intent=new Intent(ImageSelect.this,FinalAct.class);
                             intent.putExtra("text",text);
+                            Log.d("pop",textSent);
+                            intent.putExtra("textSent",textSent);
+
                             Gson gson = new Gson();
                             JsonParser parser = new JsonParser();
                             // response will be the json String
@@ -360,9 +367,13 @@ public class ImageSelect extends AppCompatActivity implements DeletePostImageLis
                             }
                             if(emp.getClass_text().equals(""))
                             {
-                                emp.setClass_text("None");
+                                emp.setClass_text("None detected: Sorry we could not detect any hampering. Kindly try with a different image.");
                             }
-                            intent.putExtra("class","Class text = "+emp.getClass_text()+System.lineSeparator()+"Class confidence = "+emp.getClass_confidence());
+                            else
+                            {
+                                emp.setClass_text("We have notified the PWD Department as we detected "+ emp.getClass_text() +" in your captured image.");
+                            }
+                            intent.putExtra("class",emp.getClass_text()+System.lineSeparator());
 
                             startActivity(intent);
                         } catch (JSONException e) {

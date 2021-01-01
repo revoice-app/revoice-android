@@ -43,6 +43,8 @@ public class AudioToText extends AppCompatActivity {
     private Handler handler;
     private ScrollView scrollView;
     private static String kaka="";
+    private String text = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +89,6 @@ public class AudioToText extends AppCompatActivity {
         materialButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("popo","pp  - "+classify(txvResult.getText().toString()));
                // builder1.setMessage(kaka);
                // AlertDialog alert11 = builder1.create();
                // alert11.show();
@@ -144,52 +145,59 @@ public class AudioToText extends AppCompatActivity {
                 () -> {
                     client.unload();
                 });
-    }
-
-    /** Send input text to TextClassificationClient and get the classify messages. */
-    private String classify(final String text) {
-        final String[] textToShow = new String[1];
+    }private void classify(final String text) {
         handler.post(
                 () -> {
                     // Run text classification with TF Lite.
                     List<Result> results = client.classify(text);
 
                     // Show classification result on screen
-                    kaka=showResult(text, results);
-
-
+                    showResult(text, results);
                 });
-        Log.d("popo","pppo  - "+textToShow[0]);
-        return textToShow[0];
     }
 
-    /** Show classification result on the screen. */
-    private String showResult(final String inputText, final List<Result> results) {
+    /**
+     * Show classification result on the screen.
+     */
+    private void showResult(final String inputText, final List<Result> results) {
         // Run on UI thread as we'll updating our app UI
-        final String[] textToShow = new String[1];
         runOnUiThread(
                 () -> {
-                     textToShow[0] = "Input: " + inputText + "\nOutput:\n";
+                    String textToShow = "Input: " + inputText + "\nOutput:\n";
+                    Float a = 0f;
+                    Float b = 0f;
                     for (int i = 0; i < results.size(); i++) {
                         Result result = results.get(i);
-                        textToShow[0] += String.format("    %s: %s\n", result.getTitle(), result.getConfidence());
+                        textToShow += String.format("    %s: %s\n", result.getTitle(), result.getConfidence());
+                        if (i == 0)
+                            a = result.getConfidence();
+                        else {
+                            b = result.getConfidence();
+                            ;
+                        }
                     }
-                    textToShow[0] += "\n";
-                    String text=textToShow[0];
-                    if(text.length()>0) {
+                    textToShow += "\n";
+                    text = textToShow;
+                    if (text.length() > 0) {
                         Intent intent = new Intent(this, ImageSelect.class);
-                        intent.putExtra("text", text);
+                        intent.putExtra("text", inputText);
+                        if (a > b)
+                            intent.putExtra("textSent", "Positive Review sentiment: We determined that you gave a \"Positive\" review. Thank you for your efforts.");
+                        else {
+                            intent.putExtra("textSent", "Negative Review sentiment: We determined that you gave a \"Negative\" review. We are sorry for the inconvenience.");
+                        }
                         startActivity(intent);
                     }
 
-
                     // Append the result to the UI.
+                    //resultTextView.setText(textToShow);
 
                     // Clear the input text.
+                    // inputEditText.getText().clear();
 
                     // Scroll to the bottom to show latest entry's classification result.
+                    //scrollView.post(() -> scrollView.fullScroll(View.FOCUS_DOWN));
                 });
-        return textToShow[0];
-
     }
+
 }
