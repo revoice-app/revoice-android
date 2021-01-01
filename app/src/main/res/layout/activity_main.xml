@@ -25,7 +25,7 @@
         android:scaleType="centerCrop"
         android:src="@drawable/kb"
         android:id="@+id/smart"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         />
     <TextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/smart"
         android:text=" Review  "
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:id="@+id/ram"
         android:fontFamily="sans-serif-condensed-light"
         android:textColor="@color/darkblue"
@@ -53,8 +53,9 @@
         android:layout_marginRight="30dp"
         android:layout_marginBottom="100dp"
         android:stateListAnimator="@null"
-        android:text="   Sign with Google"
-        android:textColor="@color/white"
+        android:text=" Sign In with Google"
+        android:textColor="@color/darkblue"
+        android:backgroundTint="@color/white"
         android:textSize="15dp"/>
 
     <ImageView
