@@ -1,111 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppTheme.login"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background"
     android:backgroundTint="#000000"
     android:backgroundTintMode="add"
-    android:orientation="vertical">
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/homelogo"
-        android:layout_alignParentEnd="true"
-        android:clickable="true"
-        android:id="@+id/logout"/>
+    android:orientation="vertical"
+    android:background="@drawable/city">
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="75dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
         android:src="@drawable/homelogo" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_above="@+id/bottomLl"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            android:layout_marginBottom="70dp"
             android:id="@+id/aboutTop"
-            android:elevation="10dp"
-            app:cardCornerRadius="5dp"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="70dp"
             android:background="#ffffff"
-            >
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
             <RelativeLayout
+                android:id="@+id/textRL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/textRL"
+                android:background="#A4BBCC">
 
-                >
                 <ImageView
-                    android:layout_width="90dp"
-                    android:scaleType="fitXY"
-                    android:layout_height="70dp"
-                    android:src="@drawable/text"
+                    android:id="@+id/image1"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/image1"
-                    />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/xxxhdpi" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image1"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-medium"
-                    android:textStyle="bold"
-                    android:text="Text Review" />
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Text Review"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="120dp"
+            android:layout_width="140dp"
             android:layout_height="180dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="50dp"
             android:layout_marginBottom="70dp"
-            android:layout_marginStart="50dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="5dp"
             android:background="#ffffff"
-            >
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
             <RelativeLayout
+                android:id="@+id/audioRL"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/audioRL"
-                >
+                android:background="#A4BBCC">
+
                 <ImageView
-                    android:layout_width="90dp"
-                    android:scaleType="fitXY"
-                    android:layout_height="70dp"
-                    android:src="@drawable/audio_"
+                    android:id="@+id/image2"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/image2"
-                    />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/au" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image2"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-medium"
-                    android:textStyle="bold"
-                    android:text="Audio Review" />
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Audio Review"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
@@ -114,98 +123,109 @@
 
 
     <LinearLayout
+        android:id="@+id/bottomLl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/bottomLl"
         android:orientation="horizontal">
+
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            android:layout_marginBottom="70dp"
             android:id="@+id/about"
-            android:elevation="10dp"
-            app:cardCornerRadius="5dp"
+            android:layout_width="140dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="70dp"
             android:background="#ffffff"
-            >
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
             <RelativeLayout
+                android:id="@+id/aboutUs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                >
+                android:background="#A4BBCC">
+
                 <ImageView
-                    android:layout_width="90dp"
-                    android:scaleType="fitXY"
-                    android:layout_height="70dp"
-                    android:src="@drawable/about"
+                    android:id="@+id/image3"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/image3"
-                    />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/hdpi" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image3"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-medium"
-                    android:textStyle="bold"
-                    android:text="About Us" />
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="About Us"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="120dp"
+            android:layout_width="140dp"
             android:layout_height="180dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="50dp"
             android:layout_marginBottom="70dp"
-            android:layout_toRightOf="@id/about"
-            android:layout_marginStart="50dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="5dp"
-            android:id="@+id/audio"
             android:background="#ffffff"
-            >
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="50dp"
+            app:cardCornerRadius="10dp"
+            card_view:cardElevation="20dp"
+            card_view:cardPreventCornerOverlap="false">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/profile"
-                >
+                android:background="#A4BBCC"
+                android:id="@+id/profile">
+
                 <ImageView
-                    android:layout_width="90dp"
-                    android:scaleType="fitXY"
-                    android:layout_height="70dp"
-                    android:src="@drawable/profile"
-                    android:backgroundTint="#000000"
-                    android:backgroundTintMode="multiply"
+                    android:id="@+id/image4"
+                    android:layout_width="70dp"
+                    android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/image4"
-                    />
+                    android:backgroundTint="#000000"
+                    android:backgroundTintMode="multiply"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/persson" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/image4"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif-medium"
-                    android:textStyle="bold"
-                    android:text="Profile" />
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Profile"
+                    android:textColor="@color/colorDarkBlue"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
 
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
-
-
-
-
-
 
 
 </RelativeLayout>

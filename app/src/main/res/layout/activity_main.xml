@@ -4,33 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <com.scwang.wave.MultiWaveHeader
-        android:id="@+id/top"
-        android:layout_width="290dp"
-        android:layout_height="102dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-100dp"
-        android:layout_marginTop="-24dp"
-        android:rotation="-45">
-
-
-    </com.scwang.wave.MultiWaveHeader>
-
-    <com.scwang.wave.MultiWaveHeader
-        android:id="@+id/bottom"
-        android:layout_width="290dp"
-        android:layout_height="102dp"
-
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="-130dp"
-        android:rotation="-225">
-    </com.scwang.wave.MultiWaveHeader>
 
     <ImageView
         android:layout_width="120dp"
@@ -42,30 +18,29 @@
         android:layout_marginRight="-90dp"
         android:layout_marginBottom="-50dp"
 
-        ></ImageView>
+        />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_below="@id/top"
         android:scaleType="centerCrop"
         android:src="@drawable/kb"
         android:id="@+id/smart"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
-        ></ImageView>
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/smart"
         android:text=" Review  "
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:id="@+id/ram"
         android:fontFamily="sans-serif-condensed-light"
         android:textColor="@color/darkblue"
         android:textStyle="bold"
         android:layout_marginTop="-20dp"
         android:layout_centerHorizontal="true"
-        ></TextView>
+        />
 
 
     <Button
@@ -77,14 +52,11 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="100dp"
-        android:background="@drawable/logi_button"
         android:stateListAnimator="@null"
-        android:text="   Sign with Google"
-
-
-        android:textColor="#464646"
-
-        android:textSize="15dp"></Button>
+        android:text=" Sign In with Google"
+        android:textColor="@color/darkblue"
+        android:backgroundTint="@color/white"
+        android:textSize="15dp"/>
 
     <ImageView
         android:layout_width="65dp"

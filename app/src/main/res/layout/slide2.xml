@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#939599">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:background="#ffffff"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:elevation="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        card_view:cardElevation="20dp"
+        card_view:cardPreventCornerOverlap="false">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/work" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:text="WHAT WE DO?"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="20dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="We help people provide feedback on bad
+quality of road, complain about mismanagement of staff in public transport etc. These
+feedbacks would directly be sent to respective government authority or any higher authority which is
+responsible for the discrepancy of their services."
+        android:textAlignment="center"
+        android:textColor="#393333"
+        android:textSize="15sp" />
+
+</RelativeLayout>

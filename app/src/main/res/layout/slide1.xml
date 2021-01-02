@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#939599">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:background="#ffffff"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0.0px"
+        android:elevation="50dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        card_view:cardElevation="20dp"
+        card_view:cardPreventCornerOverlap="false">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/smartcity" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:text="WHO WE ARE?"
+        android:textAlignment="center"
+        android:textColor="@color/colorDarkBlue"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="20dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:text="This is a smart review app which will help the people to lodge complaints, provide live
+feedback on any ongoings around the city.The major role of our app is the extraction and estimation of the sentiment from the
+feedback which is provided in the form of speech and generate a score/confidence which is
+sent alongside the regular feedback, so the authority can directly infer from the feedback."
+        android:textAlignment="center"
+        android:textColor="#393333"
+        android:textSize="15sp" />
+
+</RelativeLayout>

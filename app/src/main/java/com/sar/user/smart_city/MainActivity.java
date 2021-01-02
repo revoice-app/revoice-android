@@ -5,6 +5,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -39,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_main);
-        anim();
         firebaseAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
         progressBar=findViewById(R.id.progress_circular);
         progressBar.setVisibility(View.INVISIBLE);
@@ -68,28 +68,6 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         });
     }
 
-
-
-
-    public void anim()
-    {
-        MultiWaveHeader multiWaveHeader=findViewById(R.id.top);
-        multiWaveHeader.setVelocity(1);
-        multiWaveHeader.setProgress(1);
-        multiWaveHeader.setWaveHeight(40);
-        multiWaveHeader.setGradientAngle(45);
-        multiWaveHeader.isRunning();
-        multiWaveHeader.setStartColor(R.color.ligtblue);
-        multiWaveHeader.setStartColor(R.color.darkblue);
-        MultiWaveHeader multiWaveHeader1=findViewById(R.id.bottom);
-        multiWaveHeader1.setVelocity(1);
-        multiWaveHeader1.setProgress(1);
-        multiWaveHeader1.setWaveHeight(40);
-        multiWaveHeader1.setGradientAngle(45);
-        multiWaveHeader1.isRunning();
-        multiWaveHeader1.setStartColor(R.color.ligtblue);
-        multiWaveHeader1.setStartColor(R.color.darkblue);
-    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -115,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             // Google Sign In failed, update UI appropriately
             //Log.e(TAG, "Login Unsuccessful. "+result);
             Toast.makeText(this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+            Log.e("tag1234566",result.toString());
+
         }
     }
     private void firebaseAuthWithGoogle(AuthCredential credential){
@@ -150,15 +130,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         finish();
         startActivity(new Intent(MainActivity.this,MainScreen.class));
     }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(firebaseAuth.getCurrentUser()!=null)
-        {
-            finish();
-            startActivity(new Intent(MainActivity.this,Splash.class));
-        }
-    }
+
 
 
 

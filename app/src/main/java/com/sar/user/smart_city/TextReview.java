@@ -27,13 +27,13 @@ import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatTextView;
+
 import org.tensorflow.lite.examples.textclassification.client.Result;
 import org.tensorflow.lite.examples.textclassification.client.TextClassificationClient;
 
 import java.util.List;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatTextView;
 
 public class TextReview extends AppCompatActivity {
     private static final String TAG = "TextClassificationDemo";

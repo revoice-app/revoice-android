@@ -32,7 +32,7 @@
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
                 android:tint="@color/black"
-                app:srcCompat="@drawable/player_back_btn" />
+                app:srcCompat="@drawable/ic_arrow_back" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -43,7 +43,7 @@
                 android:gravity="start"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:text="select_images"
+                android:text="Select Images"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="17sp"
@@ -101,13 +101,16 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveBtn"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
         android:enabled="true"
+        android:text="Skip"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#939599"/>
         android:text="skip"
         app:cornerRadius="20dp" />
 
