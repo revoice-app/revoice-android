@@ -28,6 +28,7 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import org.tensorflow.lite.examples.textclassification.client.Result;
@@ -46,6 +47,7 @@ public class TextReview extends AppCompatActivity {
     private ScrollView scrollView;
     private String text = "";
     LocationManager locationManager;
+    private AppCompatImageView backIV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,13 @@ public class TextReview extends AppCompatActivity {
         client = new TextClassificationClient(getApplicationContext());
         handler = new Handler();
         Button classifyButton = findViewById(R.id.button);
+        backIV=findViewById(R.id.backIV);
+        backIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         classifyButton.setOnClickListener(
                 (View v) -> {

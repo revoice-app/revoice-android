@@ -16,7 +16,8 @@
       android:layout_marginStart="10dp"
       android:paddingTop="20dp"
       android:paddingBottom="20dp"
-      app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal_background" />
+      android:backgroundTint="@color/black"
+      app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
   <com.google.android.material.card.MaterialCardView
       android:layout_width="match_parent"
